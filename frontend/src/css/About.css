@@ -1,0 +1,8 @@
+.about-section {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
