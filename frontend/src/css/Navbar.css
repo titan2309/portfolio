@@ -1,8 +1,10 @@
 .navbar {
   width: 70%;
   margin: 30px auto;
-  border: 1px solid white;
   border-radius: 10px;
+  backdrop-filter: blur(9px) saturate(180%);
+  box-shadow: rgba(92, 92, 204, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .navbar-nav {
@@ -48,8 +50,9 @@
 }
 
 .nav-link:hover {
-  background-color: #93b1a6;
-  border-radius: 5px;
+  border-bottom: 2px solid #93b1a6;
+  /* background-color: #93b1a6; */
+  /* border-radius: 5px; */
 }
 
 .navbar-toggler {
