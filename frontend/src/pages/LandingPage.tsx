@@ -81,7 +81,7 @@ const LandingPage: React.FC = () => {
   return (
     <div className="landing-page" ref={mountRef}>
       <Navbar />
-      <section className="home-section" id="home">
+      <section className="hero-section" id="home">
         <Hero />
       </section>
       <section className="about-section" id="about">
