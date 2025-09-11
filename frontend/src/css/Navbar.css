@@ -40,12 +40,6 @@
   }
 }
 
-.nav-link.active {
-  color: var(--light) !important;
-  font-weight: bold;
-  border-bottom: 2px solid var(--secondary);
-}
-
 .nav-item {
   padding: 8px 2px;
 }

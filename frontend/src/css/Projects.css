@@ -5,19 +5,43 @@
   align-items: center;
 }
 
-.projects-div {
-  
+.div-projects {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .projects-head {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   text-align: center;
 }
 
 .projects-heading {
   font-weight: 600 !important;
   color: var(--text) !important;
+}
+
+.project-row {
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-card {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.project-title {
+  text-align: center;
+  color: var(--text) !important;
+}
+
+.project-title-text {
+  text-align: center;
+  color: var(--text);
+}
+
+.project-bullets {
+  list-style: none;
+  color: var(--text);
 }
