@@ -50,9 +50,7 @@ const About: React.FC = () => {
                 plotting how to debug life itself. 🚀
               </p>
             </div>
-            <div className="col-md-6">
-                  
-            </div>
+            <div className="col-md-6"></div>
           </div>
         </div>
       </div>
