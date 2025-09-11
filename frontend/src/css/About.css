@@ -3,6 +3,29 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
-  color: white;
+}
+
+.div-about {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-head {
   text-align: center;
+}
+
+.about-heading {
+  font-weight: 600 !important;
+  color: var(--text) !important;
+}
+
+.about-lead-text {
+  color: var(--text);
+}
+
+.about-strong-text {
+  font-weight: 600;
+  color: var(--mid);
 }

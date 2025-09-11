@@ -18,9 +18,8 @@ const Hero: React.FC = () => {
 
       const { innerWidth, innerHeight } = window;
 
-      // Calculating rotation based on mouse position
-      const x = (e.clientX / innerWidth - 0.5) * 20;
-      const y = (e.clientY / innerHeight - 0.5) * 20;
+      const x = (e.clientX / innerWidth - 0.5) * 25;
+      const y = (e.clientY / innerHeight - 0.5) * 25;
 
       heroRef.current.style.transform = `rotateX(${y}deg) rotateY(${x}deg)`;
     };
@@ -30,30 +29,32 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <div className="hero-div" ref={heroRef}>
-      <div>
-        <h1 className="display-3 fw-bold">Hi, I'm Hardik! 🚀</h1>
-        <p className="lead">
-          <Typewriter
-            words={words}
-            loop={0}
-            cursor
-            cursorStyle="|"
-            typeSpeed={80}
-            deleteSpeed={50}
-            delaySpeed={1500}
-          />
-        </p>
+    <>
+      <div className="hero-div" ref={heroRef}>
+        <div>
+          <h1 className="hero-heading display-3">Hi, I'm Hardik! 💻</h1>
+          <p className="lead hero-lead-text">
+            <Typewriter
+              words={words}
+              loop={0}
+              cursor
+              cursorStyle="|"
+              typeSpeed={80}
+              deleteSpeed={50}
+              delaySpeed={1500}
+            />
+          </p>
+        </div>
+        <div className="cta-links gap-3">
+          <a className="btn  btn-lg cta-btn-1 shadow" href="#projects">
+            View Projects
+          </a>
+          <a className="btn  btn-lg cta-btn-2" href={resume} download>
+            Download Resume
+          </a>
+        </div>
       </div>
-      <div className="cta-links gap-3">
-        <a className="btn btn-lg cta-btn-1 shadow" href="#projects">
-          View Projects
-        </a>
-        <a className="btn btn-lg cta-btn-2" href={resume} download>
-          Download Resume
-        </a>
-      </div>
-    </div>
+    </>
   );
 };
 

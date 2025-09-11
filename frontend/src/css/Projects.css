@@ -3,6 +3,21 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
-  color: white;
+}
+
+.projects-div {
+  
+}
+
+.projects-head {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
+}
+
+.projects-heading {
+  font-weight: 600 !important;
+  color: var(--text) !important;
 }

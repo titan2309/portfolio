@@ -10,22 +10,19 @@ import Navbar from "../components/Navbar";
 const LandingPage: React.FC = () => {
   const mountRef = useRef<HTMLDivElement | null>(null);
 
+  // Three.js starfield
   useEffect(() => {
     const currentMount = mountRef.current;
     if (!currentMount) return;
 
-    // Scene
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x040d12);
 
-    // Camera
     const width = window.innerWidth;
     const height = window.innerHeight;
-    const aspectRatio = width / height;
-    const camera = new THREE.PerspectiveCamera(75, aspectRatio, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     camera.position.z = 200;
 
-    // Renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(width, height);
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -43,10 +40,12 @@ const LandingPage: React.FC = () => {
       positions[i] = (Math.random() - 0.5) * 5000;
     }
     const starGeometry = new THREE.BufferGeometry();
-    const starGeometryAttribute = new THREE.BufferAttribute(positions, 3);
-    starGeometry.setAttribute("position", starGeometryAttribute);
+    starGeometry.setAttribute(
+      "position",
+      new THREE.BufferAttribute(positions, 3)
+    );
     const starMaterial = new THREE.PointsMaterial({
-      color: 0x93b1a6,
+      color: 0xc6d870,
       size: 1.5,
     });
     const stars = new THREE.Points(starGeometry, starMaterial);
@@ -69,7 +68,6 @@ const LandingPage: React.FC = () => {
     };
     animate();
 
-    // Cleanup
     return () => {
       cancelAnimationFrame(animationId);
       renderer.dispose();
@@ -81,19 +79,19 @@ const LandingPage: React.FC = () => {
   return (
     <div className="landing-page" ref={mountRef}>
       <Navbar />
-      <section className="hero-section" id="home">
+      <section id="home">
         <Hero />
       </section>
-      <section className="about-section" id="about">
+      <section id="about">
         <About />
       </section>
-      <section className="projects-section" id="projects">
+      <section id="projects">
         <Projects />
       </section>
-      <section className="skills-section" id="skills">
+      <section id="skills">
         <Skills />
       </section>
-      <section className="contact-section" id="contact">
+      <section id="contact">
         <Contact />
       </section>
     </div>

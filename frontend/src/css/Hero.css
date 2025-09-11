@@ -3,7 +3,6 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
-  color: white;
 }
 
 .hero-div {
@@ -15,8 +14,17 @@
   text-align: center;
   position: relative;
   z-index: 1;
-  perspective: "1000px";
-  transition: "transform 0.1s ease-out";
+  perspective: 1000px;
+  transition: transform 0.1s ease-out;
+}
+
+.hero-heading {
+  color: var(--text) !important;
+  font-weight: 600 !important;
+}
+
+.hero-lead-text {
+  color: var(--text) !important;
 }
 
 .cta-links {
@@ -25,21 +33,21 @@
 
 .cta-btn-1 {
   color: var(--text) !important;
-  background-color: var(--mid) !important;
+  background-color: var(--secondary) !important;
 }
 
 .cta-btn-1:hover {
   color: var(--mid) !important;
   background-color: var(--bg) !important;
-  border: 1px solid var(--mid) !important;
+  border: 1px solid var(--secondary) !important;
 }
 
 .cta-btn-2 {
   color: var(--mid) !important;
-  border: 1px solid var(--mid) !important;
+  border: 1px solid var(--secondary) !important;
 }
 
 .cta-btn-2:hover {
   color: var(--text) !important;
-  background-color: var(--mid) !important;
+  background-color: var(--secondary) !important;
 }
