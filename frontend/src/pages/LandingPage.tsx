@@ -79,19 +79,19 @@ const LandingPage: React.FC = () => {
   return (
     <div className="landing-page" ref={mountRef}>
       <Navbar />
-      <section id="home">
+      <section id="home" className="hero-section">
         <Hero />
       </section>
-      <section id="about">
+      <section id="about" className="about-section">
         <About />
       </section>
-      <section id="projects">
+      <section id="projects" className="projects-section">
         <Projects />
       </section>
-      <section id="skills">
+      <section id="skills" className="skills-section">
         <Skills />
       </section>
-      <section id="contact">
+      <section id="contact" className="contact-section">
         <Contact />
       </section>
     </div>

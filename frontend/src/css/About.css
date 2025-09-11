@@ -1,19 +1,15 @@
 .about-section {
   display: flex;
-  height: 100vh;
+  height: 100dvh;
   justify-content: center;
   align-items: center;
 }
 
 .div-about {
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.about-head {
-  /* text-align: center; */
 }
 
 .about-heading {
@@ -23,6 +19,7 @@
 
 .about-lead-text {
   color: var(--text);
+  margin-bottom: 1.5rem;
 }
 
 .about-strong-text {
