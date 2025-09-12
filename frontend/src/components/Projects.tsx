@@ -4,10 +4,8 @@ import "../css/Projects.css";
 
 const Projects: React.FC = () => {
   return (
-    <div className="div-projects container">
-      <div className="projects-head">
-        <h1 className="projects-heading display-4">Projects</h1>
-      </div>
+    <div className="projects-div container">
+      <h1 className="projects-heading display-4">Projects</h1>
       <br />
       <div className="row project-row">
         <div className="col-md-6">

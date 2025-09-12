@@ -1,73 +1,44 @@
-.skill-section {
-  display: flex;
-  min-height: 100dvh;
-  justify-content: center;
-  align-items: center;
-  color: white;
+.skills-section {
+  background: transparent;
+  color: var(--text);
+  position: relative;
   text-align: center;
 }
 
-.section-title {
+.skills-heading {
   color: var(--primary);
-  font-weight: 600;
-}
-
-.skill-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  border-radius: 12px;
-  transition: transform 220ms ease, box-shadow 220ms ease,
-    border-color 220ms ease;
-  height: 100%;
-}
-
-.skill-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 12px rgba(143, 163, 30, 0.06);
-  border-color: rgba(143, 163, 30, 0.18);
-}
-
-.skill-card-title {
-  color: var(--secondary);
-  font-size: 1.05rem;
-  margin-bottom: 0.5rem;
+  font-weight: 600 !important;
+  text-align: center;
 }
 
 .skill-item {
-  padding: 0.45rem 0;
-  align-items: center;
+  padding: 1.3rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
-.skill-left .skill-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: linear-gradient(180deg, var(--light), var(--mid));
-  display: inline-block;
-  box-shadow: 0 0 8px rgba(143, 163, 30, 0.18);
+.skill-item:hover {
+  transform: translateY(-5px) !important;
+  border-color: var(--secondary);
+  box-shadow: 0 8px 20px rgba(143, 163, 30, 0.25);
 }
 
-.skill-name {
-  font-size: 0.95rem;
+.skill-icon {
+  font-size: 2.9rem;
+  color: var(--mid);
+  margin-bottom: 0.5rem;
+  transition: transform 0.25s ease, color 0.25s ease;
 }
 
-/* Progress styling */
-.progress {
-  height: 8px;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 999px;
-  overflow: hidden;
+.skill-item:hover .skill-icon {
+  transform: scale(1.2) !important;
+  color: var(--light);
 }
 
-.progress-bar {
-  height: 8px;
-  background: linear-gradient(90deg, var(--mid), var(--light));
-  transition: width 800ms ease;
-}
-
-/* Responsive: hide progress bars on very small screens to keep compact layout */
-@media (max-width: 575px) {
-  .skill-bar-wrapper {
-    display: none;
-  }
+.skill-text {
+  font-size: 1rem;
+  color: var(--text);
+  margin: 0;
 }

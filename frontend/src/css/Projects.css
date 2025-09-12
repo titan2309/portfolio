@@ -5,21 +5,18 @@
   align-items: center;
 }
 
-.div-projects {
+.projects-div {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.projects-head {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
 .projects-heading {
+  text-align: center;
   font-weight: 600 !important;
   color: var(--text) !important;
+  margin-bottom: 1rem;
 }
 
 .project-row {
@@ -32,7 +29,7 @@
   margin: 5px;
   position: relative;
   border: 1px solid var(--light) !important;
-  background-color: rgba(0, 0, 0, 0.1) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   border-radius: 12px !important;
 }
