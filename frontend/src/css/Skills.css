@@ -6,3 +6,68 @@
   color: white;
   text-align: center;
 }
+
+.section-title {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  transition: transform 220ms ease, box-shadow 220ms ease,
+    border-color 220ms ease;
+  height: 100%;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 12px rgba(143, 163, 30, 0.06);
+  border-color: rgba(143, 163, 30, 0.18);
+}
+
+.skill-card-title {
+  color: var(--secondary);
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-item {
+  padding: 0.45rem 0;
+  align-items: center;
+}
+
+.skill-left .skill-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--light), var(--mid));
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(143, 163, 30, 0.18);
+}
+
+.skill-name {
+  font-size: 0.95rem;
+}
+
+/* Progress styling */
+.progress {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 8px;
+  background: linear-gradient(90deg, var(--mid), var(--light));
+  transition: width 800ms ease;
+}
+
+/* Responsive: hide progress bars on very small screens to keep compact layout */
+@media (max-width: 575px) {
+  .skill-bar-wrapper {
+    display: none;
+  }
+}

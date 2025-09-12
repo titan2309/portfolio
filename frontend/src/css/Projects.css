@@ -53,6 +53,7 @@
 
 .project-card:hover {
   transform: translateY(-15px);
+  box-shadow: rgba(221, 255, 128, 0.35) 0px -50px 36px -28px inset;
 }
 
 .project-card:hover::after {
@@ -72,6 +73,7 @@
 
 .project-bullets {
   list-style: none;
+  text-align: center;
   color: var(--text);
   padding: 0;
 }

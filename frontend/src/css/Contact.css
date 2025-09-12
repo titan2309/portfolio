@@ -6,3 +6,60 @@
   color: white;
   text-align: center;
 }
+
+.section-title {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.contact-info {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  color: var(--text);
+}
+
+.contact-info h3 {
+  color: var(--secondary);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info i {
+  color: var(--light);
+}
+
+.contact-form {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+}
+
+.contact-form label {
+  color: var(--light);
+}
+
+.contact-form .form-control {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text);
+}
+
+.contact-form .form-control:focus {
+  border-color: var(--mid);
+  box-shadow: 0 0 0 0.2rem rgba(143, 163, 30, 0.25);
+}
+
+.contact-btn {
+  background: var(--secondary);
+  color: var(--text-dark);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(143, 163, 30, 0.25);
+}
