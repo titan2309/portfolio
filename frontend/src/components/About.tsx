@@ -3,10 +3,12 @@ import "../css/About.css";
 
 const About: React.FC = () => {
   return (
-    <div className="about-div container">
-      <h1 className="about-heading display-4">About Me</h1>
-      <br />
+    <div className="div-about container">
       <div className="row about-row">
+        <div className="col-12 text-center mb-4">
+          <h1 className="about-heading display-4">About Me</h1>
+        </div>
+
         <div className="col-12 col-md-6">
           <p className="lead about-lead-text">
             Hey, I’m <span className="about-strong-text">Hardik Rathore</span> —
