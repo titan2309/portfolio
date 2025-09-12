@@ -1,7 +1,62 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "../css/About.css";
+import * as THREE from "three";
 
 const About: React.FC = () => {
+  const mountRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const mount = mountRef.current;
+    if (!mount) return;
+
+    const width = mount.clientWidth;
+    const height = mount.clientHeight;
+
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+    camera.position.z = 50;
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(width, height);
+    mount.appendChild(renderer.domElement);
+
+    // Wireframe globe
+    const geometry = new THREE.SphereGeometry(20, 32, 32);
+    const material = new THREE.MeshBasicMaterial({
+      color: 0xc6d870,
+      wireframe: true,
+      opacity: 0.5,
+      transparent: true,
+    });
+    const globe = new THREE.Mesh(geometry, material);
+    scene.add(globe);
+
+    // Animate
+    const animate = () => {
+      requestAnimationFrame(animate);
+      globe.rotation.y += 0.002;
+      renderer.render(scene, camera);
+    };
+    animate();
+
+    // Handle resize
+    const handleResize = () => {
+      camera.aspect = mount.clientWidth / mount.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(mount.clientWidth, mount.clientHeight);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      renderer.dispose();
+      if (mount.contains(renderer.domElement)) {
+        mount.removeChild(renderer.domElement);
+      }
+    };
+  }, []);
+
   return (
     <div className="div-about container">
       <div className="row about-row">
@@ -18,15 +73,15 @@ const About: React.FC = () => {
             live in the world of <span className="about-strong-text">
               Java
             </span>{" "}
-            and the
-            <span className="about-strong-text"> MERN stack</span>, building
-            things that are secure, fast, and hopefully a little fun to use.
+            and the <span className="about-strong-text">MERN stack</span>,
+            building things that are secure, fast, and hopefully a little fun to
+            use.
           </p>
           <p className="lead about-lead-text">
             I’ve shipped projects ranging from{" "}
             <span className="about-strong-text">E-Commerce platforms</span> that
             keep carts full, to{" "}
-            <span className="about-strong-text">productivity apps </span> that
+            <span className="about-strong-text">productivity apps</span> that
             (ironically) I use to procrastinate. I thrive at the crossroads of{" "}
             <span className="about-strong-text">user experience</span>,
             <span className="about-strong-text"> security</span>, and
@@ -49,9 +104,10 @@ const About: React.FC = () => {
         </div>
 
         <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
-          <div className="about-image-placeholder">
-            <p>[Your Image / Graphic Here]</p>
-          </div>
+          <div
+            ref={mountRef}
+            style={{ width: "100%", height: "500px", position: "relative" }}
+          />
         </div>
       </div>
     </div>
