@@ -1,17 +1,34 @@
 import React, { useEffect, useState } from "react";
 import "../css/Navbar.css";
+import { useNavContext } from "../context/NavContext";
 
 const Navbar: React.FC = () => {
+  const items = ["home", "about", "projects", "skills", "contact"];
   const [isScrolled, setIsScrolled] = useState(false);
+  const { activeSession, setActiveSession } = useNavContext();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+
+    const sections = document.querySelectorAll("section[id]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.find((entry) => entry.isIntersecting);
+        if (visible) {
+          setActiveSession(visible.target.id);
+        }
+      },
+      { threshold: 0.6 }
+    );
+
+    sections.forEach((s) => observer.observe(s));
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      sections.forEach((s) => observer.unobserve(s));
+    };
+  }, [setActiveSession]);
 
   return (
     <nav
@@ -33,31 +50,18 @@ const Navbar: React.FC = () => {
         </button>
         <div className="collapse navbar-collapse" id="navCon">
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <a className="nav-link" href="#home">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#about">
-                About
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#projects">
-                Projects
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#skills">
-                Skills
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#contact">
-                Contact
-              </a>
-            </li>
+            {items.map((item, index) => (
+              <li key={index} className="nav-item">
+                <a
+                  className={`nav-link ${
+                    activeSession === item ? "active" : ""
+                  }`}
+                  href={`#${item}`}
+                >
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

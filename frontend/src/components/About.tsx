@@ -103,11 +103,8 @@ const About: React.FC = () => {
           </p>
         </div>
 
-        <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
-          <div
-            ref={mountRef}
-            style={{ width: "100%", height: "500px", position: "relative" }}
-          />
+        <div className="col-12 col-md-6 ">
+          <div className="globe" ref={mountRef} />
         </div>
       </div>
     </div>

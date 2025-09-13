@@ -1,6 +1,6 @@
 .about-section {
   display: flex;
-  height: 100dvh;
+  min-height: 100vh;
   justify-content: center;
   align-items: center;
 }
@@ -27,4 +27,10 @@
   color: var(--mid);
 }
 
-
+.globe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  width: 100%;
+}
