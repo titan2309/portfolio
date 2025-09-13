@@ -64,7 +64,6 @@
 }
 
 .nav-link:hover {
-  color: var(--mid) !important;
   transform: scale(1.3);
 }
 
