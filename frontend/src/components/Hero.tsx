@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "../css/Hero.css";
-import resume from "../assets/resume.pdf";
+import resume from "../assets/resume/resume.pdf";
 import { Typewriter } from "react-simple-typewriter";
 
 const Hero: React.FC = () => {
