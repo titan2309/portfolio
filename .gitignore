@@ -20,15 +20,10 @@ dist-ssr
 # Backend specific
 backend/node_modules
 backend/dist
-backend/coverage
-backend/*.bson
-backend/*.json
-backend/*.gz
 
 # Frontend specific
 frontend/node_modules
-frontend/.next
-frontend/out
+
 
 # ======================
 # Environment files
